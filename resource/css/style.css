@@ -1,0 +1,693 @@
+
+/*===================================
+    Template Name: Paul Lapkin - Portfolio Template
+    Template URL: 
+    Description: Paul Lapkin portfolio template
+    Author: Monirul Islam
+    Author URI: monirul.app
+    Support: monirul@monirul.app
+    Version: 1.0
+====================================*/
+
+/*=====================================
+
+    CSS INDEX
+    =========
+
+    1. Common CSS
+    2. Hero
+    3. About
+    4. Process
+    5. Work
+    6. Portfolio
+========================================*/
+
+/*=====================================
+
+    1. Common CSS
+
+========================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,
+body{
+    background-color: #fff;
+    color: #000;
+    font-family: "Roboto", serif;
+    line-height: 1.5;
+    font-weight: 400;
+    font-size: 10px;
+    text-rendering: optimizeLegibility;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+
+h1, h2, h3, h4 {
+    font-family: "Raleway", sans-serif;
+    margin: 0;
+    padding: 0;    
+}
+h1{
+    letter-spacing: 4px;
+    font-weight: 700;
+    font-size: 650%;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+h2{
+    font-weight: 600;
+    font-size: 400%;
+    color: #000;
+}
+h3{
+    font-weight: 700;
+    font-size: 260%;
+    color: #fff;
+}
+h4{
+    font-weight: 600;
+    font-size: 160%;
+    color: #fff;
+}
+ul, p {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* REUSABLE COMPONENT*/
+.row{
+    max-width: 1180px;
+    margin: auto;
+}
+section, #about{
+    padding: 60px 0;;
+}
+
+.btn:link,
+.btn:visited,
+.btn{
+    width: 203px;
+    text-align: center;
+    background: #ff2b4a;
+    color: #fff;
+    display: inline-block;
+    font-size: 160%;
+    padding: 10px 0;
+    border: 2px solid #ff2b4a;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.btn:hover,
+.btn:active {
+    background: transparent;
+    color: #ff2b4a;
+
+}
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.section-title h2 {
+    font-size: 400%;
+    margin-bottom: 15px;
+}
+.section-title p {
+    font-size: 160%;
+    color: #6f6f6f;
+}
+
+/*=====================================
+
+    2. Hero
+
+========================================*/
+
+#hero{
+    height: 100vh;
+    background: linear-gradient(rgba(44, 34, 177, 0.95), rgba(44, 34, 177,0.95)), url('img/bg.png') no-repeat center / cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.logo{
+    float: left;
+    margin-top: 30px;
+    padding-bottom: 10px;
+    height: 45px;
+    z-index: 10;
+}
+.nav-icon{
+    color: #fff;
+    float: right;
+    margin-top: 30px;
+    padding-bottom: 10px;
+}
+.nav-icon ion-icon {
+    font-size: 400%;
+    border: 1px solid #fff;
+}
+.nav-icon:hover ion-icon {
+    color: #0a89eb;
+    border: 1px solid #0a89eb;
+}
+.uk-sticky{
+    background: rgb(44, 34, 177);
+}
+.hero-text-box{
+    width: 1180px;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+
+}
+h1::before {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: #fff;
+}
+h1::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: #fff;
+}
+
+.hero-text-box span{
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    font-size: 230%;
+    display: block;
+    margin-top: 15px;
+    
+}
+
+.scroll-down-hero{
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    
+}
+.scroll-down-hero ion-icon{
+    position: relative;
+    font-size: 300%;
+    color: #fff;
+    transition: 1s;
+    -webkit-animation: arrow 3s ease infinite;
+            animation: arrow 3s ease infinite;
+
+}
+@-webkit-keyframes arrow {
+    0%{
+        top: 10px;
+    }
+    50%{
+        top: 30px;
+    }
+    100%{
+        top: 10px;
+    }
+}
+@keyframes arrow {
+    0%{
+        top: 10px;
+    }
+    50%{
+        top: 30px;
+    }
+    100%{
+        top: 10px;
+    }
+}
+
+/* HUMBERGUR */
+.menu-container{
+    width: 200px;
+    background: rgba(0,0,0,0.9);
+    z-index: 99999;
+    position: fixed;
+    top: 72px;
+    right: 40px;
+    overflow: hidden;
+    visibility: hidden;
+}
+.nav-visible{
+    visibility: visible;
+}
+.close-btn ion-icon{
+    color: #fff;
+    font-size: 300%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    cursor: pointer;
+}
+.menu-item{
+    text-align: center;
+
+}
+.menu-item ul{
+
+}
+.menu-item ul li{
+    display: block;
+    margin: 10px 0;
+}
+.menu-item ul li a{
+    font-size: 200%;
+    color: #fff;
+    font-weight: 700;
+
+}
+.menu-item ul li a:hover{
+    color: #dd3030;
+
+}
+/*=====================================
+
+    3. About
+
+========================================*/
+
+.grid-about-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 30px;
+    margin: 0 100px;
+}
+.about-content-item img{
+    width: 100%;
+    height: 100%;
+
+}
+.intro{
+    font-size: 170%;
+    color: #222;
+    font-weight: 700;
+}
+.description {
+    padding: 30px 0;
+    width: 90%;
+    font-size: 140%;
+    color: #222;
+}
+.monir{
+    border: 2px solid #ec6378;
+    border-radius: 50%;
+}
+
+.scroll-down-about{
+    text-align: center;
+    font-size: 300%;
+}
+.scroll-down-about ion-icon{
+    position: relative;
+    color: #000000;
+    transition: 1s;
+    -webkit-animation: arrow 3s ease infinite;
+            animation: arrow 3s ease infinite;
+
+}
+/*=====================================
+
+    4. Process
+
+========================================*/
+
+#process {
+    background: #f6f6f6;
+}
+
+.process-content-container {
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+.process-content-items {
+    color: #fff;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.process-content-items:nth-child(1) {
+    background: #10c6fc;
+}
+.process-content-items:nth-child(2) {
+    background: #835aeb;
+}
+
+.process-content-items:nth-child(3) {
+    background: #002453;
+}
+
+.process-content-items:nth-child(4) {
+    background: #ff2b4a;
+}
+
+
+.process-content-items ion-icon {
+    font-size: 400%;
+    margin-bottom: 20px;
+}
+
+.process-content-items h4 {
+    text-transform: uppercase;
+}
+
+.scroll-down-process{
+    text-align: center;
+    font-size: 300%;
+
+}
+.scroll-down-process ion-icon{
+    position: relative;
+    color: #000000;
+    transition: 1s;
+    -webkit-animation: arrow 3s ease infinite;
+            animation: arrow 3s ease infinite;
+
+}
+/*=
+
+/*=====================================
+
+    5. Work
+
+========================================*/
+
+#work {
+    background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(img/bg_portfolio.jpg) no-repeat center / cover;
+    background-attachment: fixed;
+}
+
+.grid-work-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+    width: 85%;
+    margin: auto;
+}
+.grid-work-items {
+    background: linear-gradient(to right top, rgb(111, 99, 123), rgba(77, 100, 125));
+}
+.grid-education-items {
+    background: linear-gradient(to left bottom, rgb(111, 99, 123), rgba(77, 100, 125));
+}
+.grid-work-items, .grid-education-items {
+    padding: 40px 30px;
+    color: #fff;
+    background: rgba(0,128,128,0.7);
+    border: 1px solid #fff;
+}
+
+.grid-work-items h3, .grid-education-items h3{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 260%;
+}
+.work-subheading {
+    font-weight: 700;
+    font-size: 170%;
+    margin-top: 30px;
+    text-transform: capitalize;
+}
+.work-date {
+    font-size: 140%;
+    margin: 10px 0;
+}
+.work-content {
+    font-size: 150%;
+    text-align: justify;
+
+}
+.wc1::after {
+    content: '';
+    display: block;
+    height: .5px;
+    width: 100%;
+    background: #b4b3b3;
+    margin: 20px 0;
+}
+.scroll-down-work{
+    text-align: center;
+    font-size: 300%;
+
+}
+.scroll-down-work ion-icon{
+    position: relative;
+    color: #fff;
+    transition: 1s;
+    -webkit-animation: arrow 3s ease infinite;
+            animation: arrow 3s ease infinite;
+
+}
+
+/*=====================================
+
+    6. Portfolio
+
+========================================*/
+
+.grid-portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(250px, auto);
+    width: 80%;
+    margin: auto;
+}
+.portfolio-items img{
+    width: 100%;
+    height: 100%;
+}
+.portfolio-items:nth-child(5) {
+    grid-column: 1/3;
+    height: 250px;
+}
+.uk-lightbox-caption{
+    font-size: 200%;
+}
+
+.controls {
+    margin-bottom: 15px;
+    text-align: center;
+}
+.controls button{
+    padding: 5px 10px;
+    background: #000;
+    font-size: 150%;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 0 5px;
+    text-transform: capitalize;
+}
+.controls button:hover,
+.controls .mixitup-control-active{
+    background: #bd3737;
+}
+.scroll-down-portfolio{
+    text-align: center;
+    font-size: 300%;
+
+}
+.scroll-down-portfolio ion-icon{
+    position: relative;
+    color: #000;
+    transition: 1s;
+    -webkit-animation: arrow 3s ease infinite;
+            animation: arrow 3s ease infinite;
+
+}
+
+/*=====================================
+
+    6. Signing
+
+========================================*/
+#signing {
+    background: #64cbc0;
+}
+.signing-content {
+    width: 80%;
+    margin: auto;
+}
+
+.signing-content p {
+    font-size: 140%;
+    width: 40%;
+    margin: 30px 0;
+}
+.sign{
+    width: 150px;
+}
+.signing-content h3 {
+    font-size: 170%;
+    margin-top: 10px;
+}
+.signing-content span {
+    font-size: 120%;
+}
+.scroll-down-signing{
+    text-align: center;
+    font-size: 300%;
+
+}
+.scroll-down-signing ion-icon{
+    position: relative;
+    color: #fff;
+    transition: 1s;
+    -webkit-animation: arrow 3s ease infinite;
+            animation: arrow 3s ease infinite;
+
+}
+/*=====================================
+
+    7. Contact
+
+========================================*/
+#contact {
+    background: url(img/bg_contacts.jpg) no-repeat center / cover;
+    background-attachment: fixed;
+}
+.grid-contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    width: 80%;
+    margin: auto;
+}
+.grid-contact-items:nth-child(1) {
+    background: rgba(0,128,128,0.9);
+    padding: 30px 20px;
+    border: 1px solid #fff;
+}
+.grid-contact-items,
+.nested-grid-contact-items {
+    border-radius: 5px;
+}
+.grid-contact-items h3 {
+    font-size: 240%;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+
+}
+.single-form input[type='text'],
+.single-form input[type='email'],
+.single-form textarea {
+    width: 100%;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    background: transparent;
+    color: #fff;
+    font-size: 140%;
+    margin: 10px 0;
+    padding: 10px;
+    resize: none;
+}
+.single-form-btn {
+    float: right;
+    margin-top: 30px;
+}
+
+.nested-grid-contact-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 10px;
+}
+.nested-grid-contact-items {
+    background: rgba(0,128,128,0.9);
+    padding: 45px 30px;
+    border: 1px solid #fff;
+}
+.nested-grid-contact-items p {
+    color: #fff;
+    font-size: 140%;
+}
+/*=====================================
+
+    8. Footer
+
+========================================*/
+#footer{
+    background: #222;
+    padding: 30px 0;
+}
+.footer-content {
+    text-align: center;
+    color: #fff;
+}
+ul li {
+    list-style-type: none;
+    display: inline-block;
+}
+.social-media ul li a ion-icon {
+    color: #fff;
+    border-right: 1px solid #fff;
+    padding: 0 10px;
+    font-size: 200%;
+    margin-bottom: 15px;
+}
+.social-media ul li:last-child a ion-icon {
+    border-right: 0px;
+}
+.social-media ul li:hover a ion-icon {
+    color: #ff2b4a;
+    padding: 0 10px;
+}
+.copyright {
+    font-size: 120%;
+}
+#scrollUp{
+    margin-top: 10px;
+    visibility: hidden;
+    position:fixed;
+    bottom: 10px;
+    right: 10px;
+    background: linear-gradient(rgba(44, 34, 177, 0.7), rgba(44, 34, 177,0.7));
+}
+#scrollUp a,
+#scrollUp:hover a{
+    color: #fff;
+    border: 1px solid #fff;
+}
+#scrollUp:hover{
+    background-color: #0e7722;
+}
+
+#scrollUp.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Add a hover effect */
+  #scrollUp:hover {
+    transform: scale(1.1); /* Slightly enlarges the button */
+  }
